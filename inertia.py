@@ -21,11 +21,14 @@ n2 = [3, 6, 10.55, 13.95, 14.12]
 inertias = [find_inertia(m[i], t[i], n2[i]) for i in range(5)]
 
 # initialize x and y coordinates
-x = m[:]
-y = inertias[:]
+x = [m[i] for i in [0, 2, 3]]
+y = [inertias[i] for i in [0, 2, 3]]
+
+other_x = m[:]
+other_y = inertias[:]
 
 plt.title("Moment of Inertia of a Flywheel\n" 
           "Code: https://github.com/javlonbeckk/physicslab_1.git")
+plt.scatter(other_x, other_y)
 plt.plot(x, y, marker="*")
-plt.show()
-
+plt.show(
